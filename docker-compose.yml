@@ -13,6 +13,7 @@ services:
     volumes:
       - ./data/media:/taiga-media
       - ./conf/back:/taiga-conf
+      - ./back/start.sh:/start.sh
     env_file:
       - variables.env
 
@@ -69,8 +70,8 @@ services:
     networks:
       - default
     ports:
-      - 80:80
-      - 443:443
+      - 8001:80
+        #- 443:443
     volumes:
       #- ./cert:/taiga-cert
       - ./conf/proxy:/taiga-conf
